@@ -1761,14 +1761,22 @@ function OrionLib:MakeWindow(WindowConfig)
 						TextXAlignment = Enum.TextXAlignment[Align]
 					}), "Text"),
 					AddThemeObject(SetProps(MakeElement("Label", "", 13), {
-						Size = UDim2.new(1, -24, 0, 0),
-						Position = UDim2.new(0, 12, 0, 26),
-						Font = Enum.Font.GothamSemibold,
-						Name = "Content",
-						TextWrapped = true,
-						TextXAlignment = Enum.TextXAlignment[Align]
+   					 Size = UDim2.new(1, -24, 0, 0),
+   					 Position = UDim2.new(0, 12, 0, 26),
+   					 Font = Enum.Font.GothamSemibold,
+   					 Name = "Content",
+    				TextWrapped = true,
+    				TextXAlignment = Enum.TextXAlignment[Align]
 					}), "TextDark"),
-					AddThemeObject(MakeElement("Stroke"), "Stroke")
+
+					SetProps(MakeElement("Image", ""), {
+				    Name = "Avatar",
+    				Size = UDim2.new(0, 50, 0, 50),
+   					 Position = UDim2.new(1, -60, 0, 8),
+   					 BackgroundTransparency = 1
+					}),
+
+				AddThemeObject(MakeElement("Stroke"), "Stroke")
 				}), "Second")
 				
 				Relem(_tabName, Text, ParagraphFrame)
@@ -1808,6 +1816,9 @@ function OrionLib:MakeWindow(WindowConfig)
 						ParagraphFrame.Content.TextXAlignment = Enum.TextXAlignment[newalin]
 						ParagraphFrame.Title.TextXAlignment = Enum.TextXAlignment[newalin]
 					end
+				end
+                function ParagraphFunction:SetAvatar(Image)
+   				 ParagraphFrame.Avatar.Image = Image
 				end
 				return ParagraphFunction
 			end
