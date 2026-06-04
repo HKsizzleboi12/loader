@@ -779,6 +779,12 @@ function OrionLib:MakeWindow(WindowConfig)
                 Size = UDim2.new(0, 32, 0, 32),
                 Position = UDim2.new(0, 10, 0.5, 0)
             }), {
+                SetProps(MakeElement("Image", ""), {
+    			Name = "Avatar",
+    			Size = UDim2.new(0, 80, 0, 80),
+    			Position = UDim2.new(1, -90, 0, 8),
+    			BackgroundTransparency = 1
+				}),
                 AddThemeObject(MakeElement("Stroke"), "Stroke"),
                 MakeElement("Corner", 1)
             }),
@@ -1761,22 +1767,14 @@ function OrionLib:MakeWindow(WindowConfig)
 						TextXAlignment = Enum.TextXAlignment[Align]
 					}), "Text"),
 					AddThemeObject(SetProps(MakeElement("Label", "", 13), {
-   					 Size = UDim2.new(1, -24, 0, 0),
-   					 Position = UDim2.new(0, 12, 0, 26),
-   					 Font = Enum.Font.GothamSemibold,
-   					 Name = "Content",
-    				TextWrapped = true,
-    				TextXAlignment = Enum.TextXAlignment[Align]
+						Size = UDim2.new(1, -24, 0, 0),
+						Position = UDim2.new(0, 12, 0, 26),
+						Font = Enum.Font.GothamSemibold,
+						Name = "Content",
+						TextWrapped = true,
+						TextXAlignment = Enum.TextXAlignment[Align]
 					}), "TextDark"),
-
-					SetProps(MakeElement("Image", ""), {
-				    Name = "Avatar",
-    				Size = UDim2.new(0, 120, 0, 120),
-   					 Position = UDim2.new(1, -130, 0, 5),
-   					 BackgroundTransparency = 1
-					}),
-
-				AddThemeObject(MakeElement("Stroke"), "Stroke")
+					AddThemeObject(MakeElement("Stroke"), "Stroke")
 				}), "Second")
 				
 				Relem(_tabName, Text, ParagraphFrame)
@@ -1817,9 +1815,9 @@ function OrionLib:MakeWindow(WindowConfig)
 						ParagraphFrame.Title.TextXAlignment = Enum.TextXAlignment[newalin]
 					end
 				end
-                function ParagraphFunction:SetAvatar(Image)
-   				 ParagraphFrame.Avatar.Image = Image
-				end
+            function ParagraphFunction:SetAvatar(Image)
+    			ParagraphFrame.Avatar.Image = Image
+			end
 				return ParagraphFunction
 			end
 			
