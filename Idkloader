@@ -1773,8 +1773,6 @@ function OrionLib:MakeWindow(WindowConfig)
     				Size = UDim2.new(0, 100, 0, 100),
     				Position = UDim2.new(1, -110, 0, 5),
     				BackgroundTransparency = 1
-				}),  {
-    				MakeElement("Corner", 1, 0)
 				}),
 					AddThemeObject(MakeElement("Stroke"), "Stroke")
 				}), "Second")
@@ -1818,13 +1816,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					end
 				end
 				function ParagraphFunction:SetAvatar(Image)
-    			ParagraphFrame.Avatar.Image = Image or ""
-
-    			if Image == "" or not Image then
-        		ParagraphFrame.Avatar.Visible = false
-    		else
-        		ParagraphFrame.Avatar.Visible = true
-   			end
+    			ParagraphFrame.Avatar.Image = Image
 			end
 				return ParagraphFunction
 			end
