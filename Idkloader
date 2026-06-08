@@ -863,8 +863,8 @@ function OrionLib:MakeWindow(WindowConfig)
 					}), "TextDark"),
 					SetChildren(Create("ImageLabel", {
     				Name = "Avatar",
-    				Size = UDim2.new(0, 80, 0, 80),
-    				Position = UDim2.new(1, -90, 0, 8),
+    				Size = UDim2.new(0, 100, 0, 100),
+    				Position = UDim2.new(1, -110, 0, -5),
     				BackgroundTransparency = 1
 				}), {
     				Create("UICorner", {
@@ -876,7 +876,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				AddConnection(ParagraphFrame.Content:GetPropertyChangedSignal("Text"), function()
 					ParagraphFrame.Content.Size = UDim2.new(1, -24, 0, ParagraphFrame.Content.TextBounds.Y)
-					ParagraphFrame.Size = UDim2.new(1, 0, 0, ParagraphFrame.Content.TextBounds.Y + 35)
+					ParagraphFrame.Size = UDim2.new(1, 0, 0, math.max(90, ParagraphFrame.Content.TextBounds.Y + 35))
 				end)
 
 				ParagraphFrame.Content.Text = Content
