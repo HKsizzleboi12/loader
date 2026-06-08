@@ -672,6 +672,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	local StartSize
 	
 	ResizeHandle.MouseButton1Down:Connect(function()
+		print("Clicked resize handle")
 	    Resizing = true
 	    StartMouse = UIS:GetMouseLocation()
 	    StartSize = MainWindow.AbsoluteSize
